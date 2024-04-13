@@ -38,13 +38,19 @@ const pool = mysql.createPool({
     database: process.env.MYSQL_Schema_Name,
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+    connectTimeout: 10000, // Connection timeout in milliseconds
+    acquireTimeout: 10000, // Timeout to get connection from pool
+    timeout: 10000, // Timeout after which an idle connection is closed
+    dateStrings: true // To avoid timezone issues
 });
 
 async function getConnection() {
     try {
         const connection = await pool.getConnection();
-        if (!connection) throw new Error("Failed to connect to database.");
+        if (!connection) {
+            throw new Error("Failed to connect to database.");
+        }
         return connection;
     } catch (error) {
         console.error("Error in database connection: ", error);
@@ -53,3 +59,4 @@ async function getConnection() {
 }
 
 module.exports = getConnection;
+
