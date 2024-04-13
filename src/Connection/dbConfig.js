@@ -12,6 +12,7 @@ const connection = async () => {
         if (!connection) {
             throw new Error("Database connection failed.");
         } else {
+            console.log(connection)
             return connection;
         }
     } catch (error) {
