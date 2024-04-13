@@ -24,7 +24,7 @@ async function getGraphData(question, message) {
             return []
         }
     } catch (error) {
-        //console.log(error)
+        console.log(error)
         return [];
     }
 }

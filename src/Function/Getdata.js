@@ -4,10 +4,10 @@ let errormess = "While processing your request, we are noticing that something i
 async function getAnyInformation(query) {
     try {
         query = query?.query
-        //console.log(query)
+        console.log(query)
         const connection = await dbConfig()
         if (!connection) {
-            return (["Result not found"])
+            return (["connction not established"])
         }
         let [result] = await connection.execute(query);
         console.log(result)
@@ -21,7 +21,7 @@ async function getAnyInformation(query) {
         result.unshift({ 'Your query': query })
         return (result)
     } catch (error){
-       // console.log("error is ",error)
+       console.log("i got the error in getData ",error)
         let result = [];
         result.push(errormess)
         return (result)

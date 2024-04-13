@@ -16,7 +16,7 @@ const connection = async () => {
             return connection;
         }
     } catch (error) {
-        console.log("error is connection is ",error)
+        console.log("error in connection ",error)
         return error;
     }
 }
