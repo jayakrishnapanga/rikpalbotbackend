@@ -6,7 +6,11 @@ const connection = async () => {
             host: process.env.MYSQL_Host,
             user: process.env.MYSQL_User,
             password: process.env.MYSQL_Password,
-            database: process.env.MYSQL_Schema_Name
+            database: process.env.MYSQL_Schema_Name,
+            waitForConnections: true,
+            connectionLimit: 10,
+            queueLimit: 0
+
         };
         const connection = await mysql.createConnection(dbConfig);
         if (!connection) {
