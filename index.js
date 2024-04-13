@@ -19,6 +19,6 @@ app.use(express.static("public"));
 
 let sendToBackend = require('./src/Router/DBRouter.js');
 app.use('/api', sendToBackend);
-
+app.get('/', async (req, res) => { res.send("Server is Running clearly"); });
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
