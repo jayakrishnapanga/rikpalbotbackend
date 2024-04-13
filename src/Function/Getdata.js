@@ -1,32 +1,60 @@
-const dbConfig = require('../Connection/dbConfig');
+// const dbConfig = require('../Connection/dbConfig');
+// let errormess = "While processing your request, we are noticing that something is missing."
+
+// async function getAnyInformation(query) {
+//     try {
+//         query = query?.query
+//         console.log("query is printing---->",query)
+//         const connection = await dbConfig()
+//         console.log(connection)
+//         if (!connection) {
+          
+//             return (["connction not established"])
+//         }
+//         let [result] = await connection.execute(query);
+//         console.log(result)
+//         if (typeof (result) == 'object' && result.length == 0) {
+//             return ([`We have not found any result with your query '${query}' .`])
+//         }
+//         else if (typeof (result) != "object") {
+//             return ([result])
+//         }
+//         result.push({ "output": getdata(result) })
+//         result.unshift({ 'Your query': query })
+//         return (result)
+//     } catch (error){
+//        console.log("i got the error in getData ",error)
+//         let result = [];
+//         result.push(errormess)
+//         return (result)
+//     }
+// }
+
+const getConnection = require('../Connection/dbConfig');
 let errormess = "While processing your request, we are noticing that something is missing."
 
 async function getAnyInformation(query) {
+    let connection;
     try {
-        query = query?.query
-        console.log("query is printing---->",query)
-        const connection = await dbConfig()
-        console.log(connection)
-        if (!connection) {
-          
-            return (["connction not established"])
+        query = query?.query;
+        console.log("query is printing---->", query);
+        connection = await getConnection();
+        const [results] = await connection.execute(query);
+        connection.release();  // Release the connection back to the pool
+        console.log(results);
+
+        if (!results.length) {
+            return [`We have not found any result with your query '${query}'`];
         }
-        let [result] = await connection.execute(query);
-        console.log(result)
-        if (typeof (result) == 'object' && result.length == 0) {
-            return ([`We have not found any result with your query '${query}' .`])
-        }
-        else if (typeof (result) != "object") {
-            return ([result])
-        }
-        result.push({ "output": getdata(result) })
-        result.unshift({ 'Your query': query })
-        return (result)
-    } catch (error){
-       console.log("i got the error in getData ",error)
-        let result = [];
-        result.push(errormess)
-        return (result)
+
+        results.push({ "output": getdata(results) });
+        results.unshift({ 'Your query': query });
+        return results;
+    } catch (error) {
+        console.error("Error in getAnyInformation: ", error);
+        return [errormess];
+    } finally {
+        if (connection) connection.release(); // Ensure connection is released even if an error occurs
     }
 }
 
