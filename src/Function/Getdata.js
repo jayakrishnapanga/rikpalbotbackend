@@ -4,7 +4,7 @@ let errormess = "While processing your request, we are noticing that something i
 async function getAnyInformation(query) {
     try {
         query = query?.query
-        console.log(query)
+        console.log("query is printing---->",query)
         const connection = await dbConfig()
         if (!connection) {
             return (["connction not established"])
