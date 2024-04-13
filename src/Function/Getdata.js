@@ -6,7 +6,9 @@ async function getAnyInformation(query) {
         query = query?.query
         console.log("query is printing---->",query)
         const connection = await dbConfig()
+        console.log(connection)
         if (!connection) {
+          
             return (["connction not established"])
         }
         let [result] = await connection.execute(query);
