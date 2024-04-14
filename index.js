@@ -3,7 +3,7 @@ let cors = require("cors");
 let app = express();
 const dotenv = require('dotenv');
 dotenv.config();
-const allowedOrigins = ['http://43.205.177.169:3000', 'http://localhost:3000'];
+const allowedOrigins = ['http://43.205.177.169:3000', 'http://localhost:3000','https://rikpalbot.vercel.app'];
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
