@@ -19,6 +19,159 @@ let Payments = "Table: Payments Columns :  customerNumber (PK), checkNumber (For
 
 const functiondata = [
 
+
+    {
+        "name": "getAnyInformation",
+        "description": `My db name -${DatabaseName} ${productlines}: If user asking about any Columns which is present into that then trigger it`,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "A valid SQL query to fetch information from the database."
+                },
+                "graph": {
+                    "type": "boolean",
+                    "description": "Indicates whether an accompanying chart would benefit."
+                }
+            },
+            "required": ["query","graph"]
+        }
+    },
+    {
+        "name": "getAnyInformation",
+        "description": `My db -${DatabaseName} ${customers}:   If user asking about any Columns which is present into that then trigger it`,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "A valid SQL query to fetch information from the database."
+                },
+                "graph": {
+                    "type": "boolean",
+                    "description": "Indicates whether an accompanying chart would benefit."
+                }
+            },
+            "required": ["query","graph"]
+        }
+    },
+    {
+        "name": "getAnyInformation",
+        "description": `My db -${DatabaseName} ${products}:   If user asking about any Columns which is present into that then trigger it`,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "A valid SQL query to fetch information from the database."
+                },
+                "graph": {
+                    "type": "boolean",
+                    "description": "Indicates whether an accompanying chart would benefit."
+                }
+            },
+            "required": ["query","graph"]
+        }
+    },
+    {
+        "name": "getAnyInformation",
+        "description": `My db -${DatabaseName} ${products} and ${orderdetails}:   If user asking about any Columns which is present into that then trigger it`,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "A valid SQL query to fetch information from the database."
+                },
+                "graph": {
+                    "type": "boolean",
+                    "description": "Indicates whether an accompanying chart would benefit."
+                }
+            },
+            "required": ["query","graph"]
+        }
+    },
+    {
+        "name": "getAnyInformation",
+        "description": `My db -${DatabaseName} ${employees}:   If user asking about any Columns which is present into that then trigger it`,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "A valid SQL query to fetch information from the database."
+                },
+                "graph": {
+                    "type": "boolean",
+                    "description": "Indicates whether an accompanying chart would benefit."
+                }
+            },
+            "required": ["query","graph"]
+        }
+    },
+    {
+        "name": "getAnyInformation",
+        "description": `My db -${DatabaseName} ${orders}:   If user asking about any Columns which is present into that then trigger it`,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "A valid SQL query to fetch information from the database."
+                },
+                "graph": {
+                    "type": "boolean",
+                    "description": "Indicates whether an accompanying chart would benefit."
+                }
+            },
+            "required": ["query","graph"]
+        }
+    },
+    {
+        "name": "getAnyInformation",
+        "description": `My db -${DatabaseName} ${offices}:   If user asking about any Columns which is present into that then trigger it`,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "A valid SQL query to fetch information from the database."
+                },
+                "graph": {
+                    "type": "boolean",
+                    "description": "Indicates whether an accompanying chart would benefit."
+                }
+            },
+            "required": ["query","graph"]
+        }
+    },
+    {
+        "name": "getAnyInformation",
+        "description": `My db -${DatabaseName} ${Payments} and ${customers}:   If user asking about any Columns which is present into that then trigger it`,
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "A valid SQL query to fetch information from the database."
+                },
+                "graph": {
+                    "type": "boolean",
+                    "description": "Indicates whether an accompanying chart would benefit."
+                }
+            },
+            "required": ["query","graph"]
+        }
+    },
+
+];
+
+
+module.exports = { functiondata }
+
+
+
     // {
     //     "name": "getAnyInformation",
     //     "description": `This function retrieves data from multiple database tables:
@@ -42,153 +195,3 @@ const functiondata = [
     //         "required": ["query"]
     //     }
     // },
-    {
-        "name": "getAnyInformation",
-        "description": `My db name -${DatabaseName} ${productlines}: If user asking about any Columns which is present into that then trigger it`,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "A valid SQL query to fetch information from the database."
-                },
-                // "graph": {
-                //     "type": "boolean",
-                //     "description": "Indicates whether an accompanying chart would benefit."
-                // }
-            },
-            "required": ["query"]
-        }
-    },
-    {
-        "name": "getAnyInformation",
-        "description": `My db -${DatabaseName} ${customers}:   If user asking about any Columns which is present into that then trigger it`,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "A valid SQL query to fetch information from the database."
-                },
-                // "graph": {
-                //     "type": "boolean",
-                //     "description": "Indicates whether an accompanying chart would benefit."
-                // }
-            },
-            "required": ["query"]
-        }
-    },
-    {
-        "name": "getAnyInformation",
-        "description": `My db -${DatabaseName} ${products}:   If user asking about any Columns which is present into that then trigger it`,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "A valid SQL query to fetch information from the database."
-                },
-                // "graph": {
-                //     "type": "boolean",
-                //     "description": "Indicates whether an accompanying chart would benefit."
-                // }
-            },
-            "required": ["query"]
-        }
-    },
-    {
-        "name": "getAnyInformation",
-        "description": `My db -${DatabaseName} ${products} and ${orderdetails}:   If user asking about any Columns which is present into that then trigger it`,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "A valid SQL query to fetch information from the database."
-                },
-                // "graph": {
-                //     "type": "boolean",
-                //     "description": "Indicates whether an accompanying chart would benefit."
-                // }
-            },
-            "required": ["query"]
-        }
-    },
-    {
-        "name": "getAnyInformation",
-        "description": `My db -${DatabaseName} ${employees}:   If user asking about any Columns which is present into that then trigger it`,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "A valid SQL query to fetch information from the database."
-                },
-                // "graph": {
-                //     "type": "boolean",
-                //     "description": "Indicates whether an accompanying chart would benefit."
-                // }
-            },
-            "required": ["query"]
-        }
-    },
-    {
-        "name": "getAnyInformation",
-        "description": `My db -${DatabaseName} ${orders}:   If user asking about any Columns which is present into that then trigger it`,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "A valid SQL query to fetch information from the database."
-                },
-                // "graph": {
-                //     "type": "boolean",
-                //     "description": "Indicates whether an accompanying chart would benefit."
-                // }
-            },
-            "required": ["query"]
-        }
-    },
-    {
-        "name": "getAnyInformation",
-        "description": `My db -${DatabaseName} ${offices}:   If user asking about any Columns which is present into that then trigger it`,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "A valid SQL query to fetch information from the database."
-                },
-                // "graph": {
-                //     "type": "boolean",
-                //     "description": "Indicates whether an accompanying chart would benefit."
-                // }
-            },
-            "required": ["query"]
-        }
-    },
-    {
-        "name": "getAnyInformation",
-        "description": `My db -${DatabaseName} ${Payments} and ${customers}:   If user asking about any Columns which is present into that then trigger it`,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "A valid SQL query to fetch information from the database."
-                },
-                // "graph": {
-                //     "type": "boolean",
-                //     "description": "Indicates whether an accompanying chart would benefit."
-                // }
-            },
-            "required": ["query"]
-        }
-    },
-
-];
-
-
-module.exports = { functiondata }
-
